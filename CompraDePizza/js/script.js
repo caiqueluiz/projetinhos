@@ -78,12 +78,28 @@ document.querySelectorAll('.pizzaInfo--size').forEach((size)=> {
 })
 
 document.querySelector('.pizzaInfo--addButton').addEventListener('click', ()=> {
-    let size = document.querySelector('.pizzaInfo--size.selected').getAttribute('data-key')
-    
-    cart.push({
-        id: pizzaJson[modalKey].id,
-        size,
-        qt: modalQt,
+    let size = parseInt(document.querySelector('.pizzaInfo--size.selected').getAttribute('data-key'))
+
+    let identificador = pizzaJson[modalKey].id + '@' + size
+
+    let key = cart.findIndex((item)=>{
+        return item.identificador == identificador
     })
+
+    if(key > -1) {
+        cart[key].qt += modalQt
+    } else {
+        cart.push({
+            identificador,
+            id: pizzaJson[modalKey].id,
+            size,
+            qt: modalQt,
+        })
+
+    }
+
+    
+
+    closeModal()
 
 })

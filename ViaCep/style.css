@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+    padding: 40px;
+}
+
+.box {
+    align-self: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: lightblue;
+}
+
+#buscarCep {
+    border: 1px;
+    border-radius: 5px;
+}
+
+.btn {
+    color: black;
+    border-radius: 5px;
+    border: 1px;
+}
+
+#erro {
+    margin-left: 55px;
+    color: red;
+}

@@ -1,16 +1,16 @@
-const hora = document.querySelector('#hora')
-const minuto = document.querySelector('#minuto')
-const segundo = document.querySelector('#segundo')
+const horas = document.querySelector('#horas')
+const minutos = document.querySelector('#minutos')
+const segundos = document.querySelector('#segundos')
 
 setInterval(() => {
     let date = new Date()
-    let horas = date.getHours()
-    let minutos = date.getMinutes()
-    let segundos = date.getSeconds()
+    let hr = date.getHours()
+    let min = date.getMinutes()
+    let sec = date.getSeconds()
 
-    hora.innerHTML = `${formatTime(horas)}`
-    minuto.innerHTML = `${formatTime(minutos)}`
-    segundo.innerHTML = `${formatTime(segundos)}`
+    horas.innerHTML = `${formatTime(hr)}`
+    minutos.innerHTML = `${formatTime(min)}`
+    segundos.innerHTML = `${formatTime(sec)}`
 
 }, 1000)
 
